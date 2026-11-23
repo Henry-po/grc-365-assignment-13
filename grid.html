@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Portfolio</title>
+
+<link rel="stylesheet" href="https://use.typekit.net/iuq8fpa.css">
+<link rel="stylesheet" href="navigation.css">
+	
+<style>
+	body {
+		background: rgba(255,250,242,1.00);
+	} #square {
+		width: 868px;
+		max-width: 90%;
+		background: rgba(255,255,255,1.00);
+		margin: 24px auto;
+		border-radius: 48px;
+		border: 5px double rgba(217,53,81,1.00);
+		display: grid;
+		grid-template: auto / repeat(3, auto);
+		justify-content: center;
+		align-items: center;
+		
+		rgba(176,171,77,1.00)
+	} h1 {
+		font: 48px/0.9em 'Coiny';
+		text-align: center;
+		color: rgba(91,57,58,1.00);
+		margin-top: 48px;
+	} h2 {
+		font: 36px/0.9em 'Coiny';
+		text-align: center;
+		color: rgba(86,57,58,1.00);
+		margin-top: 48px;
+	} .thumb {
+		width: 100%;
+		border-radius: 5px;
+		display: block;
+	} figure {
+		width: 150px;
+		margin: 30px;
+		text-align: center;
+	} figure:nth-child(1) {
+		grid-area: 1/1;
+	} figure:nth-child(2) {
+		grid-area: 1/2;
+	} figure:nth-child(3) {
+		grid-area: 1/3;
+	} figcaption {
+		font: 12pt/1.4em 'Giulia';
+		color: rgba(66,41,42,1.00);
+		text-align: center;
+	} table {
+		width: 768px;
+		max-width: 90%;
+		margin: 25px auto 72px;
+		border: 1px solid rgba(176,171,77,1.00);
+		border-collapse: separate;
+		border-spacing: 0;
+		border-radius: 40px;
+		darkgray;
+		box-shadow: 0px 2px 8px rgba(199,191,191,1.00);
+		overflow: hidden;
+		background: white;
+		font: 12pt/0.3em Giulia;
+	} th, td {
+		font: 13pt/1.4em 'Giulia';
+		padding: 16px;
+		border: 1px solid rgba(176,171,77,1.00);
+		text-align: center;
+	} th {
+		background: rgba(176,171,77,1.00);
+		color: white;
+	} td {
+		color: rgba(86,57,58,1.00);
+	
+</style>
+</head>
+
+<body>
+	<header>
+    <a class="brand" href="home.html">PORTFOLIO</a>
+
+		<nav aria-label="Main navigation">
+		  <a href="home.html">Home</a>
+		  <a href="about.html">About</a>
+		  <a href="grid.html" aria-current="page">Portfolio</a>
+		  <a href="grimm.html">Grimm Tales</a>
+		  <a href="forms.html">Contact</a>
+		</nav>	
+	</header>
+	
+	<h1>Portfolio</h1>
+	<div id="square">
+		<figure>
+		  <a href="mia.JPG" target="_blank">
+			<img class="thumb" src="mia_thumbnail.JPG" alt="Illustration of Mia">
+		  </a>
+		  <figcaption>Illustration of Mia</figcaption>
+		</figure>
+		
+		<figure>
+		  <a href="cupid.JPG" target="_blank">
+			<img class="thumb" src="cupid_thumbnail.JPG" alt="Illustration of Cupid">
+		  </a>
+		  <figcaption>Illustration of Cupid</figcaption>
+		</figure>
+		
+		<figure>
+		  <a href="cedar.JPG" target="_blank">
+			<img class="thumb" src="cedar_thumbnail.JPG" alt="Illustration of Cedar">
+		  </a>
+		  <figcaption>Illustration of Cedar</figcaption>
+		</figure> 
+		
+	</div>
+	
+	<h2>Portfolio Information</h2>
+	
+	<table>
+		<thead>
+			<tr>
+			<th>Artwork Details</th>
+			<th>File Format</th>
+			<th>Resolution</th>
+			<th>Year</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr>
+				<td>Illustration of Mia</td>
+				<td>JPG</td>
+				<td>1920 x 1080</td>
+				<td>2025</td>
+			</tr>
+			
+			<tr>
+				<td>Illustration of Cupid</td>
+				<td>JPG</td>
+				<td>2048 x 2048</td>
+				<td>2026</td>
+			</tr>
+			
+			<tr>
+				<td>Illustration of Cedar</td>
+				<td>JPG</td>
+				<td>1920 x 1920</td>
+				<td>2026</td>
+			</tr>	
+			
+		</tbody>	
+	</table>
+	
+</body>
+</html>

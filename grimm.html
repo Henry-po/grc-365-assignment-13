@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grimm Tales</title>
+
+  <link rel="stylesheet" href="https://use.typekit.net/iuq8fpa.css">
+  <link rel="stylesheet" href="../fairytale/style.css">
+  <link rel="stylesheet" href="navigation.css">
+
+  <style>
+    body {
+      background: rgba(255,250,242,1.00);
+    } h1 {
+      font: 100px/1 'Rafaella', Georgia, serif;
+      text-align: center;
+      color: #5b393a;
+      margin-top: 48px;
+      margin-bottom: 20px;
+      max-width: 100%;
+    } .leaves,.bottomleaves {
+      font-size: 30px;
+      text-align: center;
+      color: #ca8a3c;
+    } .leaves {
+      margin-top: 9px;
+      margin-bottom: 15px;
+    } .bottomleaves {
+      clear: both;
+      margin-top: 12px;
+      margin-bottom: 10px;
+    } h2 {
+      font: bold 50px/1.2 'Rafaella', Georgia, serif;
+      text-align: center;
+      color: #5b393a;
+      margin-top: 14px;
+      margin-bottom: 30px;
+    }
+
+    #square {
+      --story-size: 20px;
+      width: 868px;
+      max-width: 95%;
+      background: white;
+      margin: 24px auto;
+      padding: 30px;
+      border-radius: 40px;
+      border: 1px solid #cf9859;
+      box-sizing: border-box;
+      position: relative;
+    } figure {
+      width: 300px;
+      max-width: 45%;
+      float: left;
+      margin: 0 30px 20px 0;
+      text-align: center;
+    } .storyimage {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+    } figcaption {
+      font: italic 16px/1.4 'Giulia', Georgia, serif;
+      color: #865c2f;
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: -5px;
+    }
+
+    /* Both story paragraphs use the same Giulia weight as the button. */
+    #square p {
+      font-family: "giulia", Arial, sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: var(--story-size);
+      line-height: 1.5;
+      color: #5b393a;
+      margin-bottom: 20px;
+    } #square.larger-text p {
+      font-size: calc(var(--story-size) * 1.25);
+    } .first::first-letter {
+      font: 70px/0.6 'Rafaella', Georgia, serif;
+      color: #da4256;
+      float: left;
+      margin: 15px 8px 0 0;
+    } #square::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    /* Center the button */
+    .reading-controls {
+      clear: both;
+      text-align: center;
+      padding-top: 10px;
+    } #text-size-button {
+      padding: 9px 20px;
+      border: 2px solid #b0ab4d;
+      border-radius: 24px;
+      background: #feffff;
+      color: #5b393a;
+      font: bold 18px/1.4 'Giulia', Georgia, serif;
+      cursor: pointer;
+    } #text-size-button:hover {
+      background: #b0ab4d;
+    } #text-size-button[aria-pressed="true"] {
+      background: #b0ab4d;
+      color: white;
+    } #text-size-button:focus-visible {
+      outline: 3px solid #5b393a;
+      outline-offset: 3px;
+    }
+
+    /* Falling leaves */
+    .leafarea {
+      position: absolute;
+      top: 45px;
+      bottom: 45px;
+      width: 42px;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    } .leftleaves {
+      left: -4px;
+    } .rightleaves {
+      right: -4px;
+    } .leaf {
+      position: absolute;
+      top: 0;
+      left: 2px;
+      width: 35px;
+      height: auto;
+      animation: falling 10s linear infinite;
+    } .leaf1, .leaf4 {
+      animation-delay: -2s;
+    } .leaf2, .leaf5 {
+      animation-delay: -4s;
+    } .leaf3, .leaf6 {
+      animation-delay: -6s;
+    } @keyframes falling {
+      0% {
+        top: -40px;
+        transform: rotate(-15deg);
+        opacity: 0;
+      } 15% {
+        opacity: 1;
+      } 50% {
+        transform: rotate(15deg);
+        opacity: 1;
+      } 85% {
+        opacity: 1;
+      } 100% {
+        top: 100%;
+        transform: rotate(-15deg);
+        opacity: 0;
+      }
+    }
+
+    /* Mobile layout */
+    @media (max-width: 750px) {
+      h1 {
+        font-size: 65px;
+        line-height: 1;
+        margin-top: 30px;
+        margin-bottom: 15px;
+      } h2 {
+        font-size: 38px;
+        line-height: 1.2;
+        margin-bottom: 25px;
+      } #square {
+        --story-size: 28px;
+        width: 100%;
+        max-width: 95%;
+        padding: 20px;
+        border-radius: 25px;
+      } figure {
+        width: 100%;
+        max-width: 100%;
+        float: none;
+        margin: 0 auto 25px;
+      } figcaption {
+        font-size: 20px;
+        line-height: 1.5;
+        margin-top: 10px;
+      } #square p {
+        line-height: 1.7;
+      } .first::first-letter {
+        font-size: 75px;
+        line-height: 0.8;
+      } .leaves,
+      .bottomleaves {
+        font-size: 26px;
+      } .leafarea {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+	<header>
+    <a class="brand" href="home.html">GRIMM</a>
+
+		<nav aria-label="Main navigation">
+		  <a href="home.html">Home</a>
+		  <a href="about.html">About</a>
+		  <a href="grid.html">Portfolio</a>
+		  <a href="grimm.html" aria-current="page">Grimm Tales</a>
+		  <a href="forms.html">Contact</a>
+		</nav>	
+	</header>
+	
+  <h1 class="grimm-title">Grimm Tales</h1>
+
+  <div id="square">
+    <div class="leafarea leftleaves" aria-hidden="true">
+      <img class="leaf leaf1" src="leaf.PNG" alt="">
+      <img class="leaf leaf2" src="leaf.PNG" alt="">
+      <img class="leaf leaf3" src="leaf.PNG" alt="">
+    </div>
+
+    <div class="leafarea rightleaves" aria-hidden="true">
+      <img class="leaf leaf4" src="leaf.PNG" alt="">
+      <img class="leaf leaf5" src="leaf.PNG" alt="">
+      <img class="leaf leaf6" src="leaf.PNG" alt="">
+    </div>
+
+    <div class="leaves" aria-hidden="true">
+      &#10087; &#10087; &#10087;
+    </div>
+
+    <h2>Hansel and Gretel</h2>
+
+    <figure>
+      <img class="storyimage"
+           src="hansel.jpg"
+           alt="Hansel and Gretel meeting the witch">
+
+      <figcaption>
+        Illustration of Hansel and Gretel by Arthur Rackham
+      </figcaption>
+    </figure>
+
+    <p class="first">
+      Near a great forest there lived a poor woodcutter with his wife
+      and his two children. The little boy was called Hansel, and the
+      little girl was called Gretel. He had little to bite and to
+      break, and once when great dearth fell on the land, he could no
+      longer procure even daily bread.
+    </p>
+
+    <p>
+      Now when he thought over this by night in his bed, and tossed
+      about in his anxiety, he groaned and said to his wife:
+      &ldquo;What is to become of us? How are we to feed our poor
+      children, when we no longer have anything even for
+      ourselves?&rdquo;...
+    </p>
+
+    <div class="reading-controls">
+      <button type="button"
+              id="text-size-button"
+              aria-controls="square"
+              aria-pressed="false">
+        Larger story text
+      </button>
+    </div>
+
+    <div class="bottomleaves" aria-hidden="true">
+      &#10087; &#10087; &#10087;
+    </div>
+  </div>
+
+  <script>
+    const textSizeButton = document.getElementById("text-size-button");
+    const storyPanel = document.getElementById("square");
+
+    textSizeButton.addEventListener("click", function () {
+      const isLarger = storyPanel.classList.toggle("larger-text");
+      textSizeButton.setAttribute("aria-pressed", String(isLarger));
+    });
+  </script>
+</body>
+</html>
